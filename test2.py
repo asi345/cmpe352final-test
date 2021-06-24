@@ -24,10 +24,8 @@ class TestCases(unittest.TestCase):
         name = faker.name()
         body = [{'name':name}]
         mockRequest.side_effect = body
-
         with self.app.app_context():
             response = addUser()
-
         self.assertEqual(response[1], 201)
         self.assertEqual(response[0].json['name'], name)
 
