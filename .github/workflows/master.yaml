@@ -24,7 +24,8 @@ jobs:
         run:
           docker build . -t flask
       -
-        name: Run
         run:
-          docker run -d -p 5000:5000 flask ||
+          docker run -d -p 5000:5000 flask
+      -
+        run:
           python -m unittest test.py
