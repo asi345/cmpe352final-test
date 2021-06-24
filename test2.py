@@ -32,3 +32,5 @@ class TestCases(unittest.TestCase):
     def tearDown(self):
         print('Tests finished')
 
+if __name__ == '__main__':
+    unittest.main()
