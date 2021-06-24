@@ -26,11 +26,15 @@ def getUser(userid):
 
 @app.route('/add', methods=['POST'])
 def addUser():
-    name = request.form['name']
+    form = getRequestForm()
+    name = form['name']
     curid = data[-1]['id'] + 1
     item = {'id':curid, 'name':name}
     data.append(item)
     return jsonify(item), 201
+
+def getRequestForm():
+    return request.form
 
 @app.errorhandler(404)
 def not_found(error):
